@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido de namoro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://i.pinimg.com/originals/15/87/8c/15878cdded2c4e71e996cfd1cfc5fe37.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    #sim {
+      background-color: #34b642;
+    }
+
+    #nao {
+      background-color: #ff414d;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quer namorar comigo?</h1>
+    <button id="sim" onclick="resposta('sim')">Sim</button>
+    <button id="nao" onmouseover="moverBotaoNao()">Não</button>
+  </div>
+
+  <script>
+    function moverBotaoNao() {
+      var botaoNao = document.getElementById('nao');
+      var larguraPagina = window.innerWidth - botaoNao.offsetWidth;
+      var alturaPagina = window.innerHeight - botaoNao.offsetHeight;
+      var novaPosicaoX = Math.floor(Math.random() * larguraPagina);
+      var novaPosicaoY = Math.floor(Math.random() * alturaPagina);
+      botaoNao.style.left = novaPosicaoX + 'px';
+      botaoNao.style.top = novaPosicaoY + 'px';
+    }
+
+    function resposta(resposta) {
+      if (resposta === 'sim') {
+        alert('Que ótimo! Vamos namorar! 😊');
+      } else if (resposta === 'nao') {
+        alert('Ah, tudo bem. Talvez numa próxima vez! 😉');
+      }
+    }
+  </script>
+</body>
+</html>
